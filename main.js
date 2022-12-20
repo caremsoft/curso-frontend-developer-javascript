@@ -3,7 +3,7 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
 const vacio = document.getElementById('vacio');
 
@@ -17,32 +17,32 @@ function toggleDesktopMenu(){
 }
 
 function toggleMobileMenu(){
-    const asideMenuOpen = aside.classList.contains('inactive');
+    const asideMenuOpen = shoppingCartContainer.classList.contains('inactive');
 //    mobileMenu.classList.toggle('inactive');
     mobileMenu.classList.toggle('activo');
     if (!asideMenuOpen){
-        aside.classList.toggle('inactive');
+        shoppingCartContainer.classList.toggle('inactive');
     }
 }
 
 function toggleCarritoAside(){ 
     const mobileMenuOpen = mobileMenu.classList.contains('inactive');
-    const asideMenuOpen = aside.classList.contains('inactive');
+    const asideMenuOpen = shoppingCartContainer.classList.contains('inactive');
     if (!mobileMenuOpen){
         noMostrarDesktopMenu();
     }
-    aside.classList.toggle('inactive');
+    shoppingCartContainer.classList.toggle('inactive');
     if (!asideMenuOpen){
-        aside.classList.toggle('inactive');
+        shoppingCartContainer.classList.toggle('inactive');
     }
 }
 
 function noMostrarDesktopMenu(){
-    const asideMenuOpen = aside.classList.contains('inactive');
+    const asideMenuOpen = shoppingCartContainer.classList.contains('inactive');
     desktopMenu.classList.add('inactive');
     mobileMenu.classList.remove('activo');
     if (!asideMenuOpen){
-        aside.classList.toggle('inactive');
+        shoppingCartContainer.classList.toggle('inactive');
     }
 }
 /* Esto evita la necesidad de crear la función por aparte funcion flecha
